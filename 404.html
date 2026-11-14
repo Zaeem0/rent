@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rent Checker</title>
+    <link rel="icon" type="image/svg+xml" href="/rent/favicon.svg" />
+    <!-- Open the connections for listing photos and Google's map tiles while the app starts. -->
+    <link rel="preconnect" href="https://media.rightmove.co.uk" />
+    <link rel="preconnect" href="https://tile.googleapis.com" />
+    <meta name="theme-color" content="#18181b" />
+    <script>
+      // Apply the saved / Windows theme before the first paint (no light flash in dark mode);
+      // phones (no theme menu) always follow their own setting.
+      try {
+        const t = localStorage.getItem('rcc.theme');
+        const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+        const phone = matchMedia('(max-width: 800px)').matches;
+        const dark = phone ? prefersDark : t === 'dark' || (t !== 'light' && prefersDark);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      } catch {}
+    </script>
+    <script type="module" crossorigin src="/rent/assets/index-Bv3m53FI.js"></script>
+    <link rel="modulepreload" crossorigin href="/rent/assets/rolldown-runtime-WkwZ5CU-.js">
+    <link rel="modulepreload" crossorigin href="/rent/assets/vendor-CJT8A30C.js">
+    <link rel="stylesheet" crossorigin href="/rent/assets/vendor-CvwgXyiu.css">
+    <link rel="stylesheet" crossorigin href="/rent/assets/index-Dhm-hXw3.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
